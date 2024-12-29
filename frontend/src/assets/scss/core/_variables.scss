@@ -1,0 +1,35 @@
+@import "src/assets/scss/core/variables/colors";
+@import "src/assets/scss/core/variables/shadow";
+
+@import "src/assets/scss/core/variables/bootstrap-material-design-base";
+
+// Customized BS variables
+@import "src/assets/scss/core/variables/custom-forms";
+@import "src/assets/scss/core/variables/spacing";
+@import "src/assets/scss/core/variables/body";
+@import "src/assets/scss/core/variables/brand";
+@import "src/assets/scss/core/variables/buttons";
+@import "src/assets/scss/core/variables/card";
+@import "src/assets/scss/core/variables/code";
+@import "src/assets/scss/core/variables/dropdown";
+@import "src/assets/scss/core/variables/forms";
+@import "src/assets/scss/core/variables/list-group";
+@import "src/assets/scss/core/variables/nav";
+@import "src/assets/scss/core/variables/pagination";
+@import "src/assets/scss/core/variables/state";
+@import "src/assets/scss/core/variables/tables";
+@import "src/assets/scss/core/variables/tooltip";
+@import "src/assets/scss/core/variables/type";
+@import "src/assets/scss/core/variables/modals";
+
+// import their vars after customization for use below
+$enable-flex: true; // fully adopt flexbox layouts
+$enable-shadows: true; // enable shadows, set to false to turn off shadows
+
+
+@import "src/assets/scss/core/variables/layout";
+@import "src/assets/scss/core/variables/menu";
+@import "src/assets/scss/core/variables/drawer";
+@import "src/assets/scss/core/variables/snackbar";
+
+@import "src/assets/scss/core/variables/bootstrap-material-design";

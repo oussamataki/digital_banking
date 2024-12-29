@@ -1,0 +1,74 @@
+
+
+
+<!--**********************************
+      Main wrapper start
+  ***********************************-->
+<div id="main-wrapper">
+
+  <!--**********************************
+      Nav header start
+  ***********************************-->
+  <div class="nav-header">
+    <a href="#" class="brand-logo">
+      <i class="logo-abbr fa-brands fa-stumbleupon"></i>
+
+      <h2 *ngIf="auth.roles.includes('ADMIN')" class="brand-title">Admin</h2>
+      <h2 *ngIf="auth.roles.includes('USER')" class="brand-title">User</h2>
+    </a>
+
+    <div class="nav-control">
+      <div class="hamburger">
+        <span class="line"></span><span class="line"></span><span class="line"></span>
+      </div>
+    </div>
+  </div>
+  <!--**********************************
+      Nav header end
+  ***********************************-->
+
+
+
+  <!--**********************************
+          Header start
+      ***********************************-->
+  <div class="header">
+    <app-navbar></app-navbar>
+  </div>
+  <!--**********************************
+      Header end ti-comment-alt
+  ***********************************-->
+  <app-sidebar></app-sidebar>
+  <!--**********************************
+
+  ***********************************-->
+
+  <!--**********************************
+          Content body start
+      ***********************************-->
+  <div class="content-body">
+    <router-outlet>
+    </router-outlet>
+
+
+  </div>
+  <!--**********************************
+      Content body end
+  ***********************************-->
+
+  <!--**********************************
+      Footer start
+  ***********************************-->
+  <div class="footer fixed-bottom z-2">
+    <div class="copyright">
+      <p> <span class="heart"></span> <a href="#"></a> </p>
+    </div>
+  </div>
+  <!--**********************************
+      Footer end
+  ***********************************-->
+
+
+
+
+</div>

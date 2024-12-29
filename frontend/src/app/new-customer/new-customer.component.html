@@ -1,0 +1,120 @@
+<div class="container mt-2">
+  <div class="row">
+    <!-- Colonne pour les informations du client -->
+    <div class="col-md-6">
+      <div class="card">
+        <div class="card-header">New Customer</div>
+        <div class="card-body">
+          <form
+            [formGroup]="newCustomerFormGroup"
+            (ngSubmit)="handleSaveCustomer()"
+          >
+            <div class="mb-3">
+              <label class="form-label">Name : </label>
+              <input type="text" formControlName="name" class="form-control" />
+              <span class="text-danger"
+                    *ngIf="
+              newCustomerFormGroup.controls['name'].touched &&
+              newCustomerFormGroup.controls['name'].errors &&
+              newCustomerFormGroup.controls['name'].errors!['required']">
+            Name is Required
+          </span>
+            </div>
+            <div class="mb-3">
+              <label class="form-label">Email : </label>
+              <input type="email" formControlName="email" class="form-control" />
+              <span class="text-danger"
+                    *ngIf="
+              newCustomerFormGroup.controls['email'].touched &&
+              newCustomerFormGroup.controls['email'].errors &&
+              newCustomerFormGroup.controls['email'].errors!['email']
+          && newCustomerFormGroup.controls['email'].errors!['required']">
+            Email is Not Valid
+          </span>
+            </div>
+            <div>
+              <label class="form-label">Surname : </label>
+              <input type="text" formControlName="surName" class="form-control" />
+              <span class="text-danger"
+                    *ngIf="
+              newCustomerFormGroup.controls['surName'].touched &&
+              newCustomerFormGroup.controls['surName'].errors &&
+              newCustomerFormGroup.controls['surName'].errors!['required']">
+            City is Required
+          </span>
+            </div>
+            <div>
+              <label class="form-label">adresse: </label>
+              <input type="text" formControlName="adresse" class="form-control" />
+              <span class="text-danger"
+                    *ngIf="
+              newCustomerFormGroup.controls['adresse'].touched &&
+              newCustomerFormGroup.controls['adresse'].errors &&
+              newCustomerFormGroup.controls['adresse'].errors!['required']">
+           Date is Required
+          </span>
+            </div>
+            <div class="mb-3">
+              <label class="form-label">Phone Number:</label>
+              <input type="text" formControlName="phoneNumber" class="form-control" />
+              <span class="text-danger"
+                    *ngIf="newCustomerFormGroup.controls['phoneNumber'].touched &&
+                   newCustomerFormGroup.controls['phoneNumber'].hasError('required')">
+            Phone Number is Required
+          </span>
+            </div>
+
+            <div class="mb-3">
+              <label class="form-label">Title:</label>
+              <select (change)="onI($event)" formControlName="title" class="form-control">
+                <option value="" disabled selected>Select title</option>
+                <option value="ADMIN">Admin</option>
+                <option value="USER">User</option>
+
+              </select>
+              <span class="text-danger"
+                    *ngIf="newCustomerFormGroup.controls['title'].touched &&
+                   newCustomerFormGroup.controls['title'].hasError('required')">
+            Title is Required
+          </span>
+            </div>
+            <div>
+              <label class="form-label">Password : </label>
+              <input (input)="onIn($event)" type="password" formControlName="password" class="form-control" />
+              <span class="text-danger"
+                    *ngIf="
+              newCustomerFormGroup.controls['password'].touched &&
+              newCustomerFormGroup.controls['password'].errors &&
+              newCustomerFormGroup.controls['password'].errors!['required']">
+            City is Required
+          </span>
+            </div>
+
+
+            <button
+              [disabled]="!newCustomerFormGroup.valid"
+              class="btn btn-success"
+            >
+              Save
+            </button>
+          </form>
+        </div>
+      </div>
+    </div>
+
+    <!-- Colonne pour la photo du client -->
+    <div class="col-md-6">
+      <div class="card">
+        <div class="card-header">Documents</div>
+        <div class="card-body">
+          <div class="mb-3">
+            <label for="formFileMultiple" class="form-label">Select image file(s)</label>
+            <input class="form-control" formControlName="image" type="file" id="formFileMultiple" multiple  />
+            <!-- Add any specific validation and error messages for image if needed -->
+          </div>
+
+        </div>
+      </div>
+    </div>
+  </div>
+</div>

@@ -1,0 +1,335 @@
+
+<!--**********************************
+    Main wrapper end
+***********************************-->
+<div class="container-fluid">
+  <!-- Add Project -->
+  <div class="modal fade" id="addProjectSidebar">
+    <div class="modal-dialog" role="document">
+      <div class="modal-content">
+        <div class="modal-header">
+          <h5 class="modal-title">Create Project</h5>
+          <button type="button" class="btn-close" data-bs-dismiss="modal"></button>
+        </div>
+        <div class="modal-body">
+          <form>
+            <div class="form-group">
+              <label class="text-black font-w500">Project Name</label>
+              <input type="text" class="form-control">
+            </div>
+            <div class="form-group">
+              <label class="text-black font-w500">Dadeline</label>
+              <div class="cal-icon"><input type="date" class="form-control"><i class="far fa-calendar-alt"></i></div>
+            </div>
+            <div class="form-group">
+              <label class="text-black font-w500">Client Name</label>
+              <input type="text" class="form-control">
+            </div>
+            <div class="form-group">
+              <button type="button" class="btn btn-primary">CREATE</button>
+            </div>
+          </form>
+        </div>
+      </div>
+    </div>
+  </div>
+  <div class="row">
+    <div class="col-xl-3 col-xxl-3 col-lg-6 col-sm-6">
+      <div class="card card-bd">
+        <div class="bg-secondary card-border" style="background:#3444d5 !important;"></div>
+        <div class="card-body box-style">
+          <div class="media align-items-center">
+            <div class="media-body me-3">
+              <h2 *ngIf="agCount;else loading" class="count num-text text-black font-w700">{{agCount}}</h2>              <span class="fs-14">Total Actif Agents</span>
+            </div>
+            <svg width="36" height="36" viewBox="0 0 36 36" fill="none" xmlns="http://www.w3.org/2000/svg">
+              <path d="M34.422 13.9831C34.3341 13.721 34.1756 13.4884 33.9638 13.3108C33.7521 13.1332 33.4954 13.0175 33.222 12.9766L23.649 11.5141L19.353 2.36408C19.2319 2.10638 19.0399 1.88849 18.7995 1.73587C18.5591 1.58325 18.2803 1.5022 17.9955 1.5022C17.7108 1.5022 17.4319 1.58325 17.1915 1.73587C16.9511 1.88849 16.7592 2.10638 16.638 2.36408L12.342 11.5141L2.76902 12.9766C2.49635 13.0181 2.24042 13.1341 2.02937 13.3117C1.81831 13.4892 1.6603 13.7215 1.57271 13.9831C1.48511 14.2446 1.47133 14.5253 1.53287 14.7941C1.59441 15.063 1.72889 15.3097 1.92152 15.5071L8.89802 22.6501L7.24802 32.7571C7.20299 33.0345 7.23679 33.3189 7.34555 33.578C7.45431 33.8371 7.63367 34.0605 7.86319 34.2226C8.09271 34.3847 8.36315 34.4791 8.64371 34.495C8.92426 34.5109 9.20365 34.4477 9.45002 34.3126L18 29.5906L26.55 34.3126C26.7964 34.4489 27.0761 34.5131 27.3573 34.4978C27.6384 34.4826 27.9096 34.3885 28.1398 34.2264C28.37 34.0643 28.5499 33.8406 28.659 33.5811C28.768 33.3215 28.8018 33.0365 28.7565 32.7586L27.1065 22.6516L34.0785 15.5071C34.2703 15.3091 34.4037 15.0622 34.4643 14.7933C34.5249 14.5245 34.5103 14.2441 34.422 13.9831Z" fill="#864AD1"/>
+            </svg>
+          </div>
+        </div>
+      </div>
+    </div>
+    <div class="col-xl-3 col-xxl-3 col-lg-6 col-sm-6">
+      <div class="card card-bd">
+        <div class="bg-warning card-border"></div>
+        <div class="card-body box-style">
+          <div class="media align-items-center">
+            <div class="media-body me-3">
+              <h2 *ngIf="custCount;else loading" class="count num-text text-black font-w700">{{custCount}}</h2>
+              <ng-template #loading>Loading...</ng-template>
+              <span class="fs-14">Clients this year</span>
+            </div>
+            <svg width="36" height="36" viewBox="0 0 36 36" fill="none" xmlns="http://www.w3.org/2000/svg">
+              <path d="M17.8935 22.5C23.6925 22.5 28.3935 17.799 28.3935 12C28.3935 6.20101 23.6925 1.5 17.8935 1.5C12.0945 1.5 7.39351 6.20101 7.39351 12C7.39351 17.799 12.0945 22.5 17.8935 22.5Z" fill="#FFB930"/>
+              <path d="M29.5605 21.3344C29.217 20.9909 28.851 20.6699 28.476 20.3564C27.2159 21.96 25.6078 23.2562 23.7733 24.1472C21.9388 25.0382 19.9259 25.5007 17.8864 25.4996C15.847 25.4986 13.8345 25.0342 12.0009 24.1414C10.1673 23.2486 8.56051 21.9507 7.30199 20.3459C5.447 21.8906 3.95577 23.8256 2.9347 26.013C1.91364 28.2003 1.3879 30.586 1.39499 32.9999C1.39499 33.3978 1.55303 33.7793 1.83433 34.0606C2.11564 34.3419 2.49717 34.4999 2.89499 34.4999H32.895C33.2928 34.4999 33.6743 34.3419 33.9557 34.0606C34.237 33.7793 34.395 33.3978 34.395 32.9999C34.4004 30.8324 33.9759 28.6854 33.146 26.683C32.3162 24.6807 31.0975 22.8627 29.5605 21.3344Z" fill="#FFB930"/>
+            </svg>
+          </div>
+        </div>
+      </div>
+    </div>
+    <div class="col-xl-3 col-xxl-3 col-lg-6 col-sm-6">
+      <div class="card card-bd">
+        <div class="bg-primary card-border"></div>
+        <div class="card-body box-style">
+          <div class="media align-items-center">
+            <div class="media-body me-3">
+              <h2 class="count num-text text-black font-w700">3</h2>
+              <span class="fs-14">Total Request</span>
+            </div>
+            <svg class="primary-icon" width="36" height="36" viewBox="0 0 36 36" fill="none" xmlns="http://www.w3.org/2000/svg">
+              <path d="M11.9999 1.5H5.99994C3.51466 1.5 1.49994 3.51472 1.49994 6V29.8125C1.49994 32.2977 3.51466 34.3125 5.99994 34.3125H11.9999C14.4852 34.3125 16.4999 32.2977 16.4999 29.8125V6C16.4999 3.51472 14.4852 1.5 11.9999 1.5Z" fill="#20F174"/>
+              <path d="M30 1.5H24C21.5147 1.5 19.5 3.51472 19.5 6V12C19.5 14.4853 21.5147 16.5 24 16.5H30C32.4853 16.5 34.5 14.4853 34.5 12V6C34.5 3.51472 32.4853 1.5 30 1.5Z" fill="#20F174"/>
+              <path d="M30 19.5H24C21.5147 19.5 19.5 21.5147 19.5 24V30C19.5 32.4853 21.5147 34.5 24 34.5H30C32.4853 34.5 34.5 32.4853 34.5 30V24C34.5 21.5147 32.4853 19.5 30 19.5Z" fill="#20F174"/>
+            </svg>
+          </div>
+        </div>
+      </div>
+    </div>
+
+  <div class="row">
+    <div class="col-xl-6 col-xxl-12">
+      <div class="card">
+        <div class="card-header d-block border-0 pb-0">
+          <div class="d-flex justify-content-between pb-3">
+            <h4 class="mb-0 text-black fs-20">Accounts</h4>
+            <div class="dropdown">
+              <a href="javascript:void(0)" data-bs-toggle="dropdown" aria-expanded="false">
+                <svg width="24" height="24" viewBox="0 0 24 24" fill="none" xmlns="http://www.w3.org/2000/svg">
+                  <path d="M12 13C12.5523 13 13 12.5523 13 12C13 11.4477 12.5523 11 12 11C11.4477 11 11 11.4477 11 12C11 12.5523 11.4477 13 12 13Z" stroke="#575757" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"></path>
+                  <path d="M12 6C12.5523 6 13 5.55228 13 5C13 4.44772 12.5523 4 12 4C11.4477 4 11 4.44772 11 5C11 5.55228 11.4477 6 12 6Z" stroke="#575757" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"></path>
+                  <path d="M12 20C12.5523 20 13 19.5523 13 19C13 18.4477 12.5523 18 12 18C11.4477 18 11 18.4477 11 19C11 19.5523 11.4477 20 12 20Z" stroke="#575757" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"></path>
+                </svg>
+              </a>
+              <div class="dropdown-menu dropdown-menu-left">
+                <a class="dropdown-item" href="javascript:void(0);">Edit</a>
+                <a class="dropdown-item" href="javascript:void(0);">Delete</a>
+              </div>
+            </div>
+          </div>
+          <div class="d-flex align-items-center">
+
+          </div>
+        </div>
+        <div class="card-body pb-0 px-2 pt-2">
+          <apx-chart
+            [series]="series1"
+            [chart]="chart1"
+            [xaxis]="xaxis1"
+            [yaxis]="yaxis1"
+            [title]="title1"
+            [fill]="fill1"
+            [tooltip]="tooltip1"
+          ></apx-chart>        </div>
+      </div>
+    </div>
+    <div class="col-xl-3 col-xxl-6 col-sm-6">
+      <div class="card">
+        <div class="card-header border-0 pb-0">
+          <h4 class="fs-20 mb-0 text-black">New Clients</h4>
+          <div class="dropdown">
+            <a href="javascript:void(0)" data-bs-toggle="dropdown" aria-expanded="false">
+              <svg width="24" height="24" viewBox="0 0 24 24" fill="none" xmlns="http://www.w3.org/2000/svg">
+                <path d="M12 13C12.5523 13 13 12.5523 13 12C13 11.4477 12.5523 11 12 11C11.4477 11 11 11.4477 11 12C11 12.5523 11.4477 13 12 13Z" stroke="#575757" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"></path>
+                <path d="M12 6C12.5523 6 13 5.55228 13 5C13 4.44772 12.5523 4 12 4C11.4477 4 11 4.44772 11 5C11 5.55228 11.4477 6 12 6Z" stroke="#575757" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"></path>
+                <path d="M12 20C12.5523 20 13 19.5523 13 19C13 18.4477 12.5523 18 12 18C11.4477 18 11 18.4477 11 19C11 19.5523 11.4477 20 12 20Z" stroke="#575757" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"></path>
+              </svg>
+            </a>
+            <div class="dropdown-menu dropdown-menu-left">
+              <a class="dropdown-item" href="javascript:void(0);">Edit</a>
+              <a class="dropdown-item" href="javascript:void(0);">Delete</a>
+            </div>
+          </div>
+        </div>
+        <div class="card-body text-center pb-0 px-2 pt-2">
+<!--          <div id="widgetChart1" class="widgetChart1 dashboard-chart"></div>-->
+          <canvas id="data"></canvas>
+        </div>
+      </div>
+    </div>
+    <div class="col-xl-3 col-xxl-6 col-sm-6">
+      <div class="card">
+        <div class="card-header border-0 pb-0">
+          <h4 class="fs-20 mb-0 text-black">Monthly Target</h4>
+          <div class="dropdown">
+            <a href="javascript:void(0)" data-bs-toggle="dropdown" aria-expanded="false">
+              <svg width="24" height="24" viewBox="0 0 24 24" fill="none" xmlns="http://www.w3.org/2000/svg">
+                <path d="M12 13C12.5523 13 13 12.5523 13 12C13 11.4477 12.5523 11 12 11C11.4477 11 11 11.4477 11 12C11 12.5523 11.4477 13 12 13Z" stroke="#575757" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"></path>
+                <path d="M12 6C12.5523 6 13 5.55228 13 5C13 4.44772 12.5523 4 12 4C11.4477 4 11 4.44772 11 5C11 5.55228 11.4477 6 12 6Z" stroke="#575757" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"></path>
+                <path d="M12 20C12.5523 20 13 19.5523 13 19C13 18.4477 12.5523 18 12 18C11.4477 18 11 18.4477 11 19C11 19.5523 11.4477 20 12 20Z" stroke="#575757" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"></path>
+              </svg>
+            </a>
+            <div class="dropdown-menu dropdown-menu-left">
+              <a class="dropdown-item" href="javascript:void(0);">Edit</a>
+              <a class="dropdown-item" href="javascript:void(0);">Delete</a>
+            </div>
+          </div>
+        </div>
+        <div class="card-body text-center pt-0">
+<!--          <canvas id="chart2">-->
+
+<!--          </canvas>-->
+
+          <apx-chart
+            [series]="series2"
+            [chart]="chart2"
+            [plotOptions]="plotOptions2"
+            [colors]="colors2"
+            [labels]="labels2"
+            [legend]="legend2"
+            [responsive]="responsive2"
+
+          ></apx-chart>
+
+          <span class="fs-14 text-black d-block op5">100 / monthy</span>
+        </div>
+      </div>
+    </div>
+  </div>
+  <div class="row">
+    <div class="col-xl-6 col-xxl-12">
+      <div class="row">
+
+        <div class="col-sm-6">
+          <div class="card">
+            <div class="card-header border-0">
+              <h4 class="fs-16 text-black font-w500">Operations</h4>
+              <div class="d-flex align-items-center">
+
+              </div>
+            </div>
+            <div class="card-body text-center pb-0 p-0">
+
+              <apx-chart
+                [series]="series"
+                [chart]="chart"
+                [xaxis]="xaxis"
+                [title]="title"
+
+              ></apx-chart>            </div>
+          </div>
+        </div>
+
+
+        <div class="col-sm-6">
+          <div class="card">
+            <div class="card-body text-center d-flex align-items-center justify-content-between">
+              <div class="d-inline-block position-relative donut-chart-sale">
+                <span class="donut1" data-peity='{ "fill": ["#fc5130", "rgba(241, 241, 241,1)"],   "innerRadius": 33, "radius": 10}'>1/9</span>
+                <small class="text-primary">3%</small>
+              </div>
+              <div>
+                <h2 class="fs-28 font-w600 mb-0 text-end text-black">3</h2>
+                <p class="mb-0 fs-14 font-w400 text-black">Requests</p>
+              </div>
+            </div>
+          </div>
+        </div>
+        <div class="col-xl-12">
+          <div class="card overflow-hidden">
+            <div class="card-header border-0">
+              <h2 class="fs-16 text-black font-w500">USERS</h2>
+              <div class="d-flex align-items-center">
+
+
+              </div>
+            </div>
+            <div class="card-body">
+
+              <app-customers [isDashboard]="false"></app-customers>
+
+            </div>
+
+            <div class="card-footer pt-0 pb-0 text-center">
+              <div class="row ">
+
+                <div class="col-4 pt-3 pb-3 border-right m-auto">
+                  <h3 class="mb-1" *ngIf="custCount;else loading">{{custCount-3 <0 ? 0 : custCount - 3}} <span class="small">Left</span></h3><span>              <a href="#" class="btn btn-primary btn-rounded text-white">Show More</a>
+</span>
+                </div>
+
+              </div>
+            </div>
+          </div>
+        </div>
+        <div class="col-xl-12">
+          <div class="card message-bx">
+            <div class="card-header border-0 d-sm-flex d-block pb-0">
+              <div>
+                <h4 class="fs-20 mb-0  text-black mb-sm-0 mb-2">Recent Request</h4>
+              </div>
+              <a href="#" class="btn btn-primary btn-rounded text-white">Show More</a>
+            </div>
+            <div class="card-body">
+              <div class="media mb-3 pb-3 border-bottom">
+                <div class="image-bx me-sm-4 me-2">
+                  <img src="assets/img/hacker.png" alt="" class="rounded-circle img-1">
+                  <span class="active"></span>
+                </div>
+                <div class="media-body d-sm-flex justify-content-between d-block align-items-center">
+                  <div class="me-sm-3 me-0">
+                    <h6 class="fs-16 font-w600 mb-sm-2 mb-0"><a href="#" class="text-black">Laura Chyan</a></h6>
+                    <p class="text-black mb-1">Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor incididunt ut</p>
+                    <span class="fs-14">5m ago</span>
+                  </div>
+                </div>
+              </div>
+              <div class="media mb-3 pb-3 border-bottom">
+                <div class="image-bx me-sm-4 me-2">
+                  <img src="assets/img/gamer.png" alt="" class="rounded-circle img-1">
+                </div>
+                <div class="media-body d-sm-flex justify-content-between d-block align-items-center">
+                  <div class="me-sm-3 me-0">
+                    <h6 class="fs-16 font-w600 mb-sm-2 mb-0"><a href="#" class="text-black">Olivia Rellaq</a></h6>
+                    <p class="text-black mb-1">Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor incididunt ut</p>
+                    <span class="fs-14">41m ago</span>
+                  </div>
+                </div>
+              </div>
+              <div class="media">
+                <div class="image-bx me-sm-4 me-2">
+                  <img src="assets/img/man (1).png" alt="" class="rounded-circle img-1">
+                  <span class="active"></span>
+                </div>
+                <div class="media-body d-sm-flex justify-content-between d-block align-items-center">
+                  <div class="me-sm-3 me-0">
+                    <h6 class="fs-16 font-w600 mb-sm-2 mb-0"><a href="#" class="text-black">Keanu Tipes</a></h6>
+                    <p class="text-black mb-1">Nisi ut aliquip ex ea commodo consequat. Duis aute irure dolor in reprehenderit in voluptate velit esse cillum...</p>
+                    <span class="fs-14">25m ago</span>
+                  </div>
+                </div>
+              </div>
+            </div>
+          </div>
+        </div>
+      </div>
+    </div>
+    <div class="col-xl-12">
+      <div class="card overflow-hidden">
+        <div class="card-header border-0">
+          <h2 class="fs-16 text-black font-w500">USERS</h2>
+          <div class="d-flex align-items-center">
+
+
+          </div>
+        </div>
+        <div class="card-body">
+
+          <app-agent [isDashboard]="false" ></app-agent>
+
+        </div>
+
+        <div class="card-footer pt-0 pb-0 text-center">
+          <div class="row ">
+
+            <div class="col-4 pt-3 pb-3 border-right m-auto">
+              <h3 class="mb-1" *ngIf="custCount;else loading">{{ agCount-3 <0 ? 0 : agCount - 3}} <span class="small">Left</span></h3><span>              <a href="#" class="btn btn-primary btn-rounded text-white">Show More</a>
+</span>
+            </div>
+
+          </div>
+        </div>
+      </div>
+    </div>
+  </div>
+
+</div>
